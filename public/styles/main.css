@@ -57,6 +57,7 @@ main, #messages-card {
   height: calc(100% - 80px);
   display: flex;
   flex-direction: column;
+  color: white;
 }
 #message-filler {
   flex-grow: 1;
@@ -177,7 +178,7 @@ main, #messages-card {
   }
   #user-container {
     top: 72px;
-    background-color: rgb(3,155,229);
+    background-color: #607d8b;
     height: 38px;
     padding-top: 3px;
     padding-right: 2px;
@@ -190,10 +191,10 @@ main, #messages-card {
   }
 }
 .mdl-textfield__label:after {
-  background-color: #0288D1;
+  background-color: #d7f0f7;
 }
 .mdl-textfield--floating-label.is-focused .mdl-textfield__label {
-  color: #0288D1;
+  color: #d7f0f7;
 }
 .mdl-button .material-icons {
   top: -1px;

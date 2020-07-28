@@ -17,37 +17,56 @@
 
 // Signs-in Friendly Chat.
 function signIn() {
-  alert('TODO: Implement Google Sign-In');
+  //alert('TODO: Implement Google Sign-In');
   // TODO 1: Sign in Firebase with credential from the Google user.
+  var provider = new firebase.auth.GoogleAuthProvider();
+  firebase.auth().signInWithPopup(provider);
 }
 
 // Signs-out of Friendly Chat.
 function signOut() {
   // TODO 2: Sign out of Firebase.
+  firebase.auth().signOut();
 }
 
 //Initialize firebase.
 function initFirebase(){
+  console.log("running initFriebase!");
   // TODO
+  const firebaseConfig = {
+    apiKey: "AIzaSyD_qDtSKTE54z5JC2y2Pm6K8elWLv4ziOM",
+    authDomain: "friendme-a78ed.firebaseapp.com",
+    databaseURL: "https://friendme-a78ed.firebaseio.com",
+    projectId: "friendme-a78ed",
+    storageBucket: "friendme-a78ed.appspot.com",
+    messagingSenderId: "511804375500",
+    appId: "1:511804375500:web:96b4635dafe7116d689d69",
+    measurementId: "G-4KTC1S5CHB"
+  };
 }
 // Initiate firebase auth.
 function initFirebaseAuth() {
   // TODO 3: Initialize Firebase.
+  // Listen to auth state changes.
+  firebase.auth().onAuthStateChanged(authStateObserver);
 }
 
 // Returns the signed-in user's profile Pic URL.
 function getProfilePicUrl() {
   // TODO 4: Return the user's profile pic URL.
+  return firebase.auth().currentUser.photoURL || '/images/profile_placeholder.png';
 }
 
 // Returns the signed-in user's display name.
 function getUserName() {
   // TODO 5: Return the user's display name.
+  return firebase.auth().currentUser.displayName;
 }
 
 // Returns true if a user is signed-in.
 function isUserSignedIn() {
   // TODO 6: Return true if a user is signed-in.
+  return !!firebase.auth().currentUser;
 }
 
 // Saves a new message on the Firebase DB.
@@ -284,18 +303,18 @@ function checkSetup() {
   }
 }
 // Shortcuts to DOM Elements.
-var messageListElement;
-var messageFormElement;
-var messageInputElement;
-var submitButtonElement;
-var imageButtonElement;
-var imageFormElement;
-var mediaCaptureElement;
-var userPicElement;
-var userNameElement;
-var signInButtonElement;
-var signOutButtonElement;
-var signInSnackbarElement;
+var messageListElement = document.getElementById('messages');
+var messageFormElement = document.getElementById('message-form');
+var messageInputElement = document.getElementById('message');
+var submitButtonElement = document.getElementById('submit');
+var imageButtonElement = document.getElementById('submitImage');
+var imageFormElement = document.getElementById('image-form');
+var mediaCaptureElement = document.getElementById('mediaCapture');
+var userPicElement = document.getElementById('user-pic');
+var userNameElement = document.getElementById('user-name');
+var signInButtonElement = document.getElementById('sign-in');
+var signOutButtonElement = document.getElementById('sign-out');
+var signInSnackbarElement = document.getElementById('must-signin-snackbar');
 
 // initialize Firebase
 initFirebase();
@@ -306,6 +325,18 @@ checkSetup();
 messageFormElement.addEventListener('submit', onMessageFormSubmit);
 signOutButtonElement.addEventListener('click', signOut);
 signInButtonElement.addEventListener('click', signIn);
+
+//added by Pavan to get message and clear it done with Michael's lesson
+submitButtonElement.addEventListener('click', function()
+{
+  let p = document.createElement("p");
+  const msg = document.querySelector('#message')
+  const msgContainer = document.querySelector('#messages')
+  p.innerText = msg.value
+  msgContainer.append(p)
+  msg.value = ""
+  console.log(msgContainer, "<---- msgContainer", "p:", p)
+})
 
 // Toggle for the button.
 messageInputElement.addEventListener('keyup', toggleButton);
