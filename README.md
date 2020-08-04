@@ -29,8 +29,11 @@ Add to chat/upload image buttons:
 ![visual walkthrough](https://github.com/pavankaur/chat_app/blob/master/img4.png)
 
 ## Getting Started
-To deploy locally you will need to use command 'firebase serve --only hosting'. This will allow you to open the app on: http://localhost:5000/
-To open the deployed webapp please navigate to: https://friendme-a78ed.web.app/
+1. First you will need to fork and clone the repo on your local machine
+2. Open up your terminal, navigate to your root folder
+3. To deploy locally you will need to use command 'firebase serve --only hosting'. This will allow you to open the app on:        
+   http://localhost:5000/
+4. To open the deployed webapp please navigate to: https://friendme-a78ed.web.app/
 
 ## Credits
 This tutorial was adapted from Google Codelab. 
