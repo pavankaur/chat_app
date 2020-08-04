@@ -1,5 +1,4 @@
 # chat_app_starter
------------------------------------------------
 This chat app allows users to communicate with their friends. You are able to enjoy the visual aesthetics, while engaging in conversation. To animate the conversation you are able to upload your own unique images into the chat. 
 
 ## Directions
@@ -12,7 +11,7 @@ To run this project, you will need to complete the following workshops (found on
 5. Firebase hosting and deploying
 6. Firebase Firestore (main.js)
 ## Description
------------------------------------------------
+
 ## The following functionality is implemented:
  User is able to sign-in using their google account
  User is able to send chat messages
@@ -20,16 +19,20 @@ To run this project, you will need to complete the following workshops (found on
  When user signs in, they will be able to turn on notifications for new messages
 
 ## Visual Walkthrough
------------------------------------------------
-![visual walkthrough](Git_FriendMe.gif)
+FriendMe App Page:
+![visual walkthrough](https://github.com/pavankaur/chat_app/blob/master/img1.png)
+Sign-into Google:
+![visual walkthrough](https://github.com/pavankaur/chat_app/blob/master/img2.png)
+Allow Notifications:
+![visual walkthrough](https://github.com/pavankaur/chat_app/blob/master/img3.png)
+Add to chat/upload image buttons:
+![visual walkthrough](https://github.com/pavankaur/chat_app/blob/master/img4.png)
 
 ## Getting Started
------------------------------------------------
 To deploy locally you will need to use command 'firebase serve --only hosting'. This will allow you to open the app on: http://localhost:5000/
 To open the deployed webapp please navigate to: https://friendme-a78ed.web.app/
 
 ## Credits
------------------------------------------------
 This tutorial was adapted from Google Codelab. 
 1. Material Design Lite color classes list
    http://blog.jonathanargentiero.com/material-design-lite-color-classes-list/
